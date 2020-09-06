@@ -1,3 +1,10 @@
 ﻿@page "/"
 
-<NavMenu Items="NavMenu.TestItems"></NavMenu>
+<NavMenu Items="NavMenu.TestItems" OnItemSelected="ShowElementData"></NavMenu>
+
+@code{
+    private void ShowElementData(EventArgs e)
+    {
+        Console.WriteLine(e);
+    }
+}

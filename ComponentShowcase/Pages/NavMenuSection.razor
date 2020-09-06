@@ -2,14 +2,14 @@
     @foreach (var navMenuItem in NavMenuItems)
     {
         <div class="separator">
-            <li class="menu-item flex-item">@navMenuItem.Text</li>
+            <li class="menu-item flex-item" @onclick="DoStuff">@navMenuItem.Text</li>
             @if (navMenuItem.Children != null)
             {
                 <ul class="sub-menu">
                     @foreach (var childItem in navMenuItem.Children)
                     {
                         <div>
-                            <li class="menu-item flex-item">@childItem.Text</li>
+                            <li class="menu-item flex-item" @onclick="DoStuff">@childItem.Text</li>
                             @if (childItem.Children != null)
                             {
                                 <NavMenuSection NavMenuItems="childItem.Children"></NavMenuSection>

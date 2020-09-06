@@ -1,6 +1,8 @@
 ﻿using ComponentShowcase.Models;
 using Microsoft.AspNetCore.Components;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ComponentShowcase.Pages
 {
@@ -8,6 +10,14 @@ namespace ComponentShowcase.Pages
     {
         [Parameter]
         public IEnumerable<NavItem> Items { get; set; }
+
+        [Parameter]
+        public EventCallback<EventArgs> OnItemSelected { get; set; }
+
+        private async Task NotifyUser(EventArgs eventData)
+        {
+            await OnItemSelected.InvokeAsync(eventData);
+        }
 
         public static IEnumerable<NavItem> TestItems = new List<NavItem>()
             {
