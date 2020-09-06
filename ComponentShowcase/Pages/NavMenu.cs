@@ -82,12 +82,13 @@ namespace ComponentShowcase.Pages
                             {
                                 new NavItem
                                 {
-                                    Text = "Item 1.3.1", Children = new List<NavItem>()
-                                    {
-                                        new NavItem()
-                                    {
-                                        Text = "Item 1.3.1.1"}
-                                    }
+                                    Text = "Item 1.3.1"
+                                    //, Children = new List<NavItem>()
+                                    //{
+                                    //    new NavItem()
+                                    //{
+                                    //    Text = "Item 1.3.1.1"}
+                                    //}
                                 }
                             }
                         }

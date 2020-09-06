@@ -1,19 +1,27 @@
 ﻿<ul class="sub-menu flex-container">
+
+
     @foreach (var navMenuItem in NavMenuItems)
     {
-        <li class="menu-item flex-item">@navMenuItem.Text</li>
-        @if (navMenuItem.Children != null)
-        {
-            <ul class="sub-menu">
-                @foreach (var childItem in navMenuItem.Children)
-                {
-                    <li class="menu-item flex-item">@childItem.Text</li>
-                    @if (childItem.Children != null)
-                    {
-                        <NavMenuSection NavMenuItems="childItem.Children"></NavMenuSection>
-                    }
-                }
-            </ul>
-        }
+        <div class="separator">
+            <li class="menu-item flex-item">@navMenuItem.Text</li>
+            @if (navMenuItem.Children != null)
+            {
+                @*<div>*@
+                    <ul class="sub-menu">
+                        @foreach (var childItem in navMenuItem.Children)
+                        {
+                        <div>
+                            <li class="menu-item flex-item">@childItem.Text</li>
+                            @if (childItem.Children != null)
+                            {
+                                <NavMenuSection NavMenuItems="childItem.Children"></NavMenuSection>
+                            }
+                        </div>
+                        }
+                    </ul>
+                @*</div>*@
+            }
+        </div>
     }
 </ul>

@@ -1,1 +1,38 @@
-﻿
+﻿.flex-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    flex-wrap:  wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.flex-item {
+    position: relative;
+    margin: 10px;
+    padding-bottom: 1px;
+    cursor: pointer;
+}
+
+ul > div:hover {
+    background-color: #f7f5f5;
+    cursor: pointer;
+    -moz-box-shadow: 1px 1px 2px 2px #ccc;
+    -webkit-box-shadow: 1px 1px 2px 2px #ccc;
+    box-shadow: 1px 1px 2px 2px #ccc;
+    transition: 0.1s ease-in-out 0.1s;
+}
+
+.sub-menu {
+    list-style: none;
+    position: absolute;
+    display: inline-flex;
+}
+
+ul > div:hover > ul > div > li {
+    display: block;
+}
+
+ul > div > ul > div > li {
+    display: none;
+}
