@@ -1,6 +1,5 @@
 ﻿using ComponentShowcase.Models;
 using Microsoft.AspNetCore.Components;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,10 +11,10 @@ namespace ComponentShowcase.Pages
         public IEnumerable<NavItem> NavMenuItems { get; set; }
 
         [Parameter]
-        public EventCallback<EventArgs> OnSelect { get; set; }
-        private async Task DoStuff(EventArgs eventData)
+        public EventCallback<NavItem> OnSelect { get; set; }
+        private async Task OnItemSelected(NavItem item)
         {
-            await OnSelect.InvokeAsync(eventData);
+            await OnSelect.InvokeAsync(item);
         }
     }
 }

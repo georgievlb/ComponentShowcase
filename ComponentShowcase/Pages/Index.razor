@@ -3,8 +3,8 @@
 <NavMenu Items="NavMenu.TestItems" OnItemSelected="ShowElementData"></NavMenu>
 
 @code{
-    private void ShowElementData(EventArgs e)
+    private void ShowElementData(ComponentShowcase.Models.NavItem item)
     {
-        Console.WriteLine(e);
+        Console.WriteLine(item.Text);
     }
 }
